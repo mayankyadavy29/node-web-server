@@ -2,6 +2,8 @@ const express =require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 8080;
+
 var app = express();
 
 app.use((req, res, next) =>{
@@ -54,8 +56,8 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Started server!!");
+app.listen(port, () => {
+    console.log(`Started server on port ${port}`);
 });
 
 
