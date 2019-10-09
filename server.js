@@ -26,11 +26,11 @@ app.use(express.static(__dirname + '/public'));
 
 hbs.registerPartials(__dirname + '/views/partials/');
 
-app.set('view engine', 'hbs');
-
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 });
+
+app.set('view engine', 'hbs');
 
 hbs.registerHelper('screamIt', (text) => {
     return text.toUpperCase();
