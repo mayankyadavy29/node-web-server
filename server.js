@@ -2,7 +2,7 @@ const express =require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -53,6 +53,13 @@ app.get('/about', (req, res) => {
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage : 'Error 404 not found !!'
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle : "Projects Page",
+        welcomeMessage : "Welcome to the portfolio page. It shows the lsit of all the projects.."
     });
 });
 
